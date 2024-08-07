@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing Minds, Lifting Spirits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #003300, #336633);
+            padding: 10px 20px;
+            position: relative;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: lightgrey;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .box h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .gradient2 {
+            background: linear-gradient(135deg, #CDEAC0, #78BE8F);
+            font-size: 50px;
+            padding-top: 170px;
+            padding-right: 30px;
+            padding-bottom: 170px;
+            padding-left: 50px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4CAF50, #FF9800);
+            opacity: 0.8;
+            transform: skewY(-12deg);
+            z-index: -1;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot:hover {
+            background-color: #388E3C;
+        }
+        .logo {
+            max-width: 60px; /* Adjust maximum width of the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Styling for the modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            backdrop-filter: blur(2px); /* Apply blur effect to the background */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0; /* Removed padding */
+            border: 2px solid #888;
+            width: 30%; /* Reduced width */
+            height: 85%; /* Increased height */
+            border-radius: 10px;
+            max-height: 100vh; /* Limit height to viewport height */
+            overflow: hidden;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 10px; /* Added margin to the right */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Make iframe non-scrollable */
+        .modal-content iframe {
+            height: 100%; /* Adjusted height to account for close button */
+            width: 100%;
+            border: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="menu">
+        <img src="C:\Users\tanma\Desktop\New folder\templates\home.png" alt="Logo" class="logo">
+        <a href="#">Home</a>
+        <a href="#">Wellness plans</a>
+        <a href="#">Community support</a>
+        <a href="#">About us</a>
+        <div>
+            <button class="button" onclick="openLoginModal()">Login</button>
+            <button class="button" onclick="openSignUp()">Sign Up</button>
+        </div>
+    </nav>
+    
+    <div class="gradient2">"Healing Minds, Lifting Spirits"</div>
+
+    <div class="container">
+        <div class="boxes">
+            <div class="box">
+                <div class="gradient"></div>
+                <h2>Meditation</h2>
+                <p>Discover the power of inner peace and relaxation through meditation techniques.</p>
+            </div>
+            <div class="box">
+                <div class="gradient"></div>
+                <h2>Care & Nutrition</h2>
+                <p>Educate yourself about proper nutrition and personalized care plans.</p>
+            </div>
+            <div class="box">
+                <div class="gradient"></div>
+                <h2>Lifestyle & Awareness</h2>
+                <p>Explore healthy lifestyle choices and raise awareness about cancer prevention.</p>
+            </div>
+            <div class="box">
+                <div class="gradient"></div>
+                <h2>Yoga</h2>
+                <p>Experience the healing benefits of yoga for both body and mind.</p>
+            </div>
+            <div class="box">
+                <div class="gradient"></div>
+                <h2>Performance</h2>
+                <p>Learn techniques to enhance physical and mental performance during treatment.</p>
+            </div>
+            <div class="box">
+                <div class="gradient"></div>
+                <h2>Emotional Support</h2>
+                <p>Find resources and community support to manage emotions and maintain a positive outlook.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Cancer Healing Center. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <iframe src="login.html"></iframe>
+        </div>
+    </div>
+
+    <!-- Placeholder for chatbot icon (not functional) -->
+    <div class="chatbot">?</div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("loginModal");
+
+        // Function to open the modal
+        function openLoginModal() {
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeLoginModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeLoginModal();
+            }
+        }
+
+        // Function to open the sign up page
+        function openSignUp() {
+            window.open('SignUp.html', '_blank');
+        }
+    </script>
+
+</body>
+</html>

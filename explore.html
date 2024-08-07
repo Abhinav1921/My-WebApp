@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - CanQuere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('ai-generated-8690470_640.webp'); /* Replace with your background image path */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            overflow: hidden; /* Prevents scrollbars on the body */
+        }
+        .container {
+            width: 100%;
+            height: 100vh; /* Set height to full viewport height */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Rounded corners for the container */
+            opacity: 0; /* Initially hidden for animation */
+            transform: translateY(-20px); /* Slide up effect */
+            animation: fadeInUp 0.8s forwards; /* Fade in and slide up animation */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            font-size: 48px; /* Increased font size */
+            color: #000; /* Black text color */
+            background: linear-gradient(90deg, #ff5722, #ff9800); /* Gradient background */
+            -webkit-background-clip: text; /* For Safari */
+            background-clip: text; /* Background clip */
+            text-fill-color: transparent; /* Fill text color with gradient */
+            padding: 10px 20px; /* Padding for spacing */
+            border-radius: 8px; /* Rounded corners */
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+            display: inline-block; /* Allows padding to take effect */
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .images img {
+            width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .images img:hover {
+            transform: scale(1.05);
+        }
+        .image-description {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            font-weight: bold;
+            background-color: rgba(255, 235, 59, 0.8); /* Semi-transparent yellow background */
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out;
+        }
+        .image-description:hover {
+            background-color: rgba(255, 193, 7, 0.9); /* Slightly more opaque on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Explore</h1>
+            <div class="images">
+                <img src="C:\Users\tanma\Desktop\JAZBAA3.0\Proto-Oncogenes (3).png" alt="Healing Process">
+                <p class="image-description">This tells where you are.</p>
+                <img src="C:\Users\tanma\Desktop\JAZBAA3.0\Proto-Oncogenes (4).png" alt="Team Work">
+                <p class="image-description">This tells where you will be now.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

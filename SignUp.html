@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('trees.webp'); /* Add your background image here */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .signup-container .logo img {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        form input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .social-signup {
+            margin-top: 20px;
+        }
+
+        .social-signup p {
+            margin-bottom: 10px;
+        }
+
+        .social-signup .social-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-signup a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            color: #333;
+            background-color: white;
+        }
+
+        .social-signup img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-signup a:hover {
+            background-color: #f4f4f4;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="signup-container">
+    <div class="logo">
+        <img src="CanNull.png" alt="Logo">
+    </div>
+    <h2>Sign Up</h2>
+    <form action="http://192.168.1.19:5000/account" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <button type="submit" id="signup-btn">Sign Up</button>
+    </form>
+    <div class="social-signup">
+        <p>Or sign up with:</p>
+        <div class="social-buttons">
+            <a href="#" class="google">
+                <img src="google logo.jpg" alt="Google Logo">
+            </a>
+            <a href="#" class="facebook">
+                <img src="facebook.png" alt="Facebook Logo">
+            </a>
+        </div>
+    </div>
+    <p>Already have an account? <a href="login.html">Log In</a></p>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const signupButton = document.getElementById('signup-btn');
+
+        const changeButtonColor = (color) => {
+            signupButton.style.backgroundColor = color;
+        };
+
+        emailInput.addEventListener('focus', () => changeButtonColor('#FF5733'));
+        passwordInput.addEventListener('focus', () => changeButtonColor('#FFBD33'));
+        confirmPasswordInput.addEventListener('focus', () => changeButtonColor('#33FFBD'));
+
+        emailInput.addEventListener('blur', () => changeButtonColor('#4CAF50'));
+        passwordInput.addEventListener('blur', () => changeButtonColor('#4CAF50'));
+        confirmPasswordInput.addEventListener('blur', () => changeButtonColor('#4CAF50'));
+    });
+</script>
+</body>
+</html>

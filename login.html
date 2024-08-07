@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url('img.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 300px;
+  height: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.header img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.sign-in-with {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sign-in-with a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  margin: 10px 10px;
+  font-size: 48px; /* Adjusted to match the size of the icons */
+}
+
+.sign-in-with a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
+</style>
+<!-- Include Font Awesome library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <img src="CanNull.png" alt="Logo">
+  </div>
+  <form action="http://127.0.0.1:5000/login" method="post" target="_blank">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn">Sign In</button>
+  </form>
+  <div class="sign-in-with">
+    <p>Sign in with</p>
+    <!-- Updated Google sign-in link -->
+    <a href="https://accounts.google.com/o/oauth2/auth?
+      client_id=YOUR_CLIENT_ID.apps.googleusercontent.com&
+      redirect_uri=YOUR_REDIRECT_URI&
+      response_type=code&
+      scope=openid%20email%20profile"
+      target="_blank">
+      <i class="fab fa-google"></i>
+    </a>
+    <!-- Facebook sign-in link -->
+    <a href="https://www.facebook.com/v11.0/dialog/oauth?client_id=YOUR_FACEBOOK_APP_ID&redirect_uri=YOUR_FACEBOOK_REDIRECT_URI&scope=email,public_profile"
+       target="_blank">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </div>
+  <div class="footer">
+    <p>Don't have an account? <a href="SignUp.html">Sign Up</a></p>
+  </div>
+</div>
+
+</body>
+</html>

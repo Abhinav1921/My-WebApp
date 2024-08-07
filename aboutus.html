@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling of the body */
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background: url('flower.jpg') no-repeat center center/cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .content {
+            position: relative;
+            padding: 40px;
+            background: rgba(255, 255, 240, 0.9); /* Ivory background with some transparency */
+            width: 80%;
+            max-width: 800px;
+            max-height: 80%; /* Limit the height to 80% of the viewport */
+            overflow-y: auto; /* Enable vertical scrolling */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .container-box {
+            padding: 20px;
+            background: #ffffff; /* White background */
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        ul li::before {
+            content: '•';
+            color: #2c3e50;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .content .container-box p, .content .container-box h2, .content .container-box ul li {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+        .content p:nth-child(1) { animation-delay: 0.5s; }
+        .content h2:nth-of-type(1) { animation-delay: 1s; }
+        .content p:nth-child(3) { animation-delay: 1.5s; }
+        .content h2:nth-of-type(2) { animation-delay: 2s; }
+        .content p:nth-child(5) { animation-delay: 2.5s; }
+        .content ul li:nth-child(1) { animation-delay: 3s; }
+        .content ul li:nth-child(2) { animation-delay: 3.5s; }
+        .content ul li:nth-child(3) { animation-delay: 4s; }
+        .content h2:nth-of-type(3) { animation-delay: 4.5s; }
+        .content p:nth-child(9) { animation-delay: 5s; }
+        .content h2:nth-of-type(4) { animation-delay: 5.5s; }
+        .content p:nth-child(11) { animation-delay: 6s; }
+        .content h2:nth-of-type(5) { animation-delay: 6.5s; }
+        .content p:nth-child(13) { animation-delay: 7s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>About Us</h1>
+            <div class="container-box">
+                <p>Welcome to our startup, a beacon of hope and healing for cancer patients. Our mission is to provide emotional support and uplift the spirits of those battling cancer, ensuring they can lead a normal, fulfilling life during and after their treatment journey.</p>
+            </div>
+            
+            <h2>Our Vision</h2>
+            <div class="container-box">
+                <p>We aim to shatter the myth that cancer is a death sentence. By focusing on emotional well-being, we empower patients to maintain their mental strength, manage daily life activities, and look forward to a brighter future. Our vision is to see every cancer patient live with hope, joy, and a sense of normalcy, regardless of their diagnosis.</p>
+            </div>
+            
+            <h2>Our Approach</h2>
+            <div class="container-box">
+                <p>Our approach is holistic, integrating various elements to support the emotional and mental health of cancer patients:</p>
+                <ul>
+                    <li><strong>Mood Tracking:</strong> Understanding a patient's emotional state is crucial for providing personalized support. Our app includes a mood tracking feature, allowing patients to log their feelings and receive tailored advice and resources to improve their emotional well-being.</li>
+                    <li><strong>Diet and Sleep Cycle Awareness:</strong> A healthy diet and proper sleep are vital for recovery and overall health. Our app offers guidance on nutrition and sleep, helping patients adopt habits that promote physical and mental wellness.</li>
+                    <li><strong>Emotional Support:</strong> Through our platform, patients can connect with a community of survivors, caregivers, and professionals who understand their journey. This network offers encouragement, advice, and a listening ear, fostering a sense of belonging and support.</li>
+                </ul>
+            </div>
+            
+            <h2>Why We Care</h2>
+            <div class="container-box">
+                <p>At the heart of our startup is a deep empathy for the challenges faced by cancer patients. We believe that emotional healing is just as important as physical recovery. By addressing the emotional needs of patients, we aim to enhance their quality of life, giving them the strength to face each day with courage and optimism.</p>
+            </div>
+            
+            <h2>Join Us</h2>
+            <div class="container-box">
+                <p>Whether you are a patient, caregiver, or supporter, we invite you to join our community. Together, we can create a world where cancer patients thrive, not just survive. With our innovative approach, we are committed to making a meaningful difference in the lives of those affected by cancer.</p>
+            </div>
+            
+            <h2>Contact Us</h2>
+            <div class="container-box">
+                <p>For more information or to become a part of our journey, please reach out to us. We are here to help, support, and uplift you every step of the way.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.content .container-box p, .content .container-box h2, .content .container-box ul li');
+            elements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+</body>
+</html>
